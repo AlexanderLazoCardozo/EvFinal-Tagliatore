@@ -18,7 +18,7 @@ const Login = ({ setToken }) => {
       const { token } = response.data;
       localStorage.setItem("token", token);
       setToken(token);
-      navigate("/dashboard");
+      navigate("/clientes");
     } catch (error) {
       console.log(error);
     }
@@ -116,27 +116,27 @@ const Login = ({ setToken }) => {
                   </span>
 
                   <span className="app-brand-text demo text-body fw-bolder">
-                    Sneat
+                    evaluación final{" "}
                   </span>
                 </a>
               </div>
 
-              <h4 className="mb-2">Welcome to Sneat! 👋</h4>
-              <p className="mb-4">
-                Please sign in to your account and start the adventure
-              </p>
+              <h4 className="mb-2">Tagliatore👋</h4>
+              <p className="mb-4">Inicio de sesión </p>
 
               <form onSubmit={loginUser} className="mb-3">
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
-                    Email or Username
-                  </label>
+                  <div className="d-flex justify-content-between">
+                    <label htmlFor="email" className="form-label">
+                      Correo electronico
+                    </label>
+                  </div>
                   <input
                     type="email"
                     className="form-control"
                     id="email"
                     name="email"
-                    placeholder="Enter your email or username"
+                    placeholder="Ingresa email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -147,7 +147,7 @@ const Login = ({ setToken }) => {
                 <div className="mb-3 form-password-toggle">
                   <div className="d-flex justify-content-between">
                     <label className="form-label" htmlFor="password">
-                      Password
+                      Contraseña
                     </label>
                   </div>
 
@@ -167,32 +167,19 @@ const Login = ({ setToken }) => {
                 </div>
 
                 <div className="mb-3">
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="remember-me"
-                    />
-                    <label className="form-check-label" htmlFor="remember-me">
-                      Remember Me
-                    </label>
-                  </div>
-                </div>
-
-                <div className="mb-3">
                   <button
                     className="btn btn-primary d-grid w-100"
                     type="submit"
                   >
-                    Sign in
+                    Iniciar sesion
                   </button>
                 </div>
               </form>
 
               <p className="text-center">
-                <span>New on our platform?</span>
+                <span>¿Nuevo en la plataforma?</span>
                 <a href="/register">
-                  <span> Create an account</span>
+                  <span> Crear cuenta</span>
                 </a>
               </p>
             </div>

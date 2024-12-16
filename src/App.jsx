@@ -7,6 +7,8 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
+import Clientes from "./pages/Clientes/Clientes";
+import Categoria from "./pages/Categorias/Categoria";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -17,10 +19,18 @@ function App() {
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/register" element={<Register setToken={setToken} />} />
           <Route
-            path="/dashboard"
+            path="/clientes"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <Clientes />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/categorias"
+            element={
+              <ProtectedRoute>
+                <Categoria />
               </ProtectedRoute>
             }
           />
