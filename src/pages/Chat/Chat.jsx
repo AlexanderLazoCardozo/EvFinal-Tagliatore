@@ -39,7 +39,6 @@ const Chat = () => {
       <div className="row justify-content-center h-100">
         <div className="col-md-8 col-xl-6 chat">
           <div className="card chat-card d-flex flex-column h-100">
-            {/* Cabecera del Chat */}
             <div className="card-header msg_head">
               <div className="d-flex bd-highlight align-items-center">
                 <div className="img_cont">
@@ -65,7 +64,6 @@ const Chat = () => {
               </div>
             </div>
 
-            {/* Cuerpo del Chat */}
             <div className="card-body msg_card_body flex-grow-1" id="mensajes">
               {messages.map((msg, index) => {
                 const isUserMessage = msg.userId === userId;
@@ -78,10 +76,7 @@ const Chat = () => {
                   >
                     {isUserMessage ? (
                       <>
-                        <div className="msg_cotainer_send">
-                          {msg.text}
-                          <span className="msg_time_send">IZQ</span>
-                        </div>
+                        <div className="msg_cotainer_send">{msg.text}</div>
                         <div className="img_cont_msg">
                           <img
                             src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
@@ -99,10 +94,7 @@ const Chat = () => {
                             alt="Persona"
                           />
                         </div>
-                        <div className="msg_cotainer">
-                          {msg.text}
-                          <span className="msg_time">DERECHA</span>
-                        </div>
+                        <div className="msg_cotainer">{msg.text}</div>
                       </>
                     )}
                   </div>
@@ -110,7 +102,6 @@ const Chat = () => {
               })}
             </div>
 
-            {/* Input del Mensaje */}
             <form id="form-mensaje" onSubmit={handleSubmit} className="p-3">
               <div className="input-group">
                 <input
@@ -122,12 +113,21 @@ const Chat = () => {
                   onChange={(e) => setMessage(e.target.value)}
                 />
                 <button className="btn btn-primary send_btn" type="submit">
-                  <i className="fas fa-location-arrow"></i>
+                  <i class="bx bx-send"></i>
                 </button>
               </div>
             </form>
           </div>
         </div>
+      </div>
+      <div className="position-fixed top-0 end-0 m-4">
+        <button
+          className="btn btn-secondary"
+          onClick={() => (window.location.href = "/login")}
+        >
+          Ir al Login
+        </button>
+              
       </div>
     </div>
   );
