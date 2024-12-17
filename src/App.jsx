@@ -12,6 +12,7 @@ import Categoria from "./pages/Categorias/Categoria";
 import Ordenes from "./pages/Ordenes/Ordenes";
 import Meseros from "./pages/Meseros/Meseros";
 import Platillos from "./pages/Platillos/Platillos";
+import Chat from "./pages/Chat/Chat";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -19,6 +20,8 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path="/" element={<Chat setToken={setToken} />} />
+
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/register" element={<Register setToken={setToken} />} />
           <Route
